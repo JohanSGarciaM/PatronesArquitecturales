@@ -2,13 +2,16 @@ package edu.escuelaing.arep.logroundrobin;
 
 import static spark.Spark.*;
 
+import java.io.IOException;
+
 public class Logroundrobin {
 
 	public static void main(String... args) {
 		port(getPort());
+		staticFiles.location("/public");
 		get("/log", (req, res) -> {
 			String val = req.queryParams("value");
-			return LogMessage(val);
+			return logMessage(val);
 		});
 	}
 
@@ -19,8 +22,8 @@ public class Logroundrobin {
 		return 4567;
 	}
 	
-	private static String LogMessage(String val) throws IOException{
-		return HttpRemoteCaller.remoteHttpCall("http://localhost:4568/log")
+	private static String logMessage(String val) throws IOException{
+		return HttpRemoteCaller.remoteHttpCall("http://localhost:4568/log");
 	}
 	
 	

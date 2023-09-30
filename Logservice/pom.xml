@@ -5,6 +5,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Logservice</name>
   
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <exec.mainClass>co.edu.escuelaing.arep.logservice.Logservice</exec.mainClass>
+</properties>
+  
   <dependencies>
     <!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core -->
     <dependency>
